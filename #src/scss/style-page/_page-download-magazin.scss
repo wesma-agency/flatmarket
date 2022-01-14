@@ -1,0 +1,75 @@
+.down-magazine {
+	flex-grow: 1;
+	height: 100%;
+	background: #19232f;
+	&__wrap {
+		padding-bottom: 180px;
+	}
+
+	&__logo {
+		max-width: 730px;
+		display: flex;
+		justify-content: center;
+		padding: 42px 0 125px 0;
+		margin: 0 auto 70px auto;
+		clip-path: polygon(50% 100%, 0 0, 100% 0);
+		background: #263241;
+	}
+
+	&__botton-wrap {
+		text-align: center;
+	}
+
+	&__button {
+		max-width: 291px;
+		padding-left: 74px;
+		& span {
+			color: rgba(0, 0, 0, 0.25);
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 25px;
+			width: 34px;
+			height: 34px;
+			background: url("../img/icon-download.png") no-repeat;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.down-magazine {
+		&__wrap {
+			padding-bottom: 20px;
+		}
+
+		&__logo {
+			padding: 20px 0 80px 0;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.down-magazine {
+		&__logo {
+			margin: 0 auto 40px auto;
+			& img {
+				height: 70px;
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.down-magazine {
+		&__logo {
+			padding: 20px 0 65px 0;
+			margin: 0px auto 20px auto;
+			& img {
+				height: 50px;
+			}
+		}
+	}
+}

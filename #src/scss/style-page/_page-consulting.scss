@@ -1,0 +1,315 @@
+.consulting-book {
+	background: #19232f;
+	&__wrap {
+		padding: 50px 0 40px 0;
+	}
+
+	&__title {
+		margin-bottom: 50px;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: calc(66.6% - 25px) calc(33.4% - 25px);
+		grid-gap: 50px;
+	}
+
+	&__column {
+	}
+
+	&__slider {
+		margin: 0 -15px;
+		padding: 15px 15px 15px 15px;
+	}
+
+	&__slide-wrap {
+	}
+
+	&__slide {
+	}
+
+	&__arrows {
+		margin-top: 40px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__prev {
+		margin-right: 15px;
+	}
+
+	&__next {
+	}
+
+	&__card {
+	}
+
+	&.--book {
+		& .item-book {
+			& .item-book__image {
+				transform: perspective(600px) rotateY(0deg);
+				backface-visibility: hidden;
+				transition: transform 0.6s linear;
+			}
+
+			& .item-book__back {
+				backface-visibility: hidden;
+				transition: transform 0.6s linear;
+				transform: perspective(600px) rotateY(180deg);
+				&::before {
+					content: "";
+					position: absolute;
+					top: -15px;
+					left: -15px;
+					right: -15px;
+					bottom: -15px;
+					background: #ffffff;
+					box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.14);
+					border-radius: 4px;
+					z-index: -1;
+				}
+			}
+
+			&:hover {
+				& > .item-book__image {
+					transform: perspective(600px) rotateY(-180deg);
+				}
+		
+				& > .item-book__back {
+					transform: perspective(600px) rotateY(0deg);
+				}
+			}
+		}
+	}
+}
+
+.card-consulting-book {
+	padding: 15px 30px 30px 30px;
+	background: #ffffff;
+	border-radius: 4px;
+
+	&__image {
+		margin: 0 auto 30px auto;
+		position: relative;
+		max-width: 322px;
+		width: 100%;
+		height: 200px;
+		text-align: center;
+		border-radius: 36px;
+		overflow: hidden;
+		& img {
+			position: relative;
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			object-position: bottom;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 170px;
+			background: #eeeeee;
+			border-radius: 36px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 140%;
+		text-align: center;
+		color: #a99478;
+		& span {
+			color: #222222;
+		}
+	}
+
+	&__sign {
+		margin-bottom: 25px;
+		font-size: 16px;
+		line-height: 22px;
+		text-align: center;
+		color: #333333;
+		opacity: 0.5;
+	}
+
+	&__form {
+	}
+}
+.form-consulting-book {
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 16px;
+		margin-bottom: 20px;
+	}
+
+	&__wrap-input {
+	}
+
+	&__button-wrap {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	&__button {
+		max-width: 400px;
+	}
+
+	&__policy {
+		font-size: 14px;
+		line-height: 22px;
+		text-align: center;
+		color: rgba(51, 51, 51, 0.5);
+		& a {
+			border-bottom: 1px solid #a99478;
+			color: #a99478;
+			transition: all 0.3s ease;
+			&:hover {
+				border-color: transparent;
+			}
+		}
+	}
+}
+
+.item-book {
+	position: relative;
+	display: block;
+	height: 300px;
+	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			border-radius: 4px;
+		}
+	}
+
+	&__back {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__back-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		background: #a99478;
+		overflow: hidden;
+
+		border-radius: 4px;
+	}
+
+	&__back-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		background: #b5a084;
+		margin-bottom: 15px;
+	}
+
+	&__back-sign {
+		display: block;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 22px;
+		color: #ffffff;
+	}
+}
+
+@media (max-width: 1395px) {
+	.consulting-book {
+		&__row {
+			grid-template-columns: calc(66.6% - 10px) calc(33.4% - 10px);
+			grid-gap: 20px;
+		}
+
+		&.--book {
+			& .item-book {
+				& .item-book__back {
+					&::before {
+						top: -10px;
+						left: -10px;
+						right: -10px;
+						bottom: -10px;
+					}
+				}
+	
+			}
+		}
+	}
+
+	.card-consulting-book {
+		&__title {
+			@include adaptiv-font(22, 16);
+		}
+
+		&__sign {
+			@include adaptiv-font(16, 14);
+		}
+	}
+
+	.form-consulting-book {
+		&__policy {
+			& a {
+				@include adaptiv-font(14, 12);
+			}
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.consulting-book {
+        &__wrap {
+            padding: 20px 0;
+        }
+		&__row {
+			grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.consulting-book {
+		&__row {
+			grid-template-columns: 100%;
+		}
+
+		&__title {
+			margin-bottom: 30px;
+		}
+	}
+
+	.card-consulting-book {
+		padding: 15px;
+	}
+}
+
+@media (max-width: 500px) {
+    .form-consulting-book {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+	.item-book {
+		height: 200px;
+	}
+}

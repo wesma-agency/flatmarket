@@ -1,0 +1,66 @@
+@@include("../components/_header.html")
+
+<main class="main">
+    <div class="page-navigation">
+        <div class="container">
+            <div class="page-navigation__row">
+                <div class="page-navigation__column">
+                    <div class="page-navigation__title title-h2">Страницы</div>
+                    <div class="page-navigation__list">
+                        <a href="./index-main.html" class="page-navigation__item title-h3">Главная</a>
+                        <a href="./page-card.html" class="page-navigation__item title-h3">Объект</a>
+                        <a href="./news.html" class="page-navigation__item title-h3">Новости</a>
+                        <a href="./article.html" class="page-navigation__item title-h3">Страница новости</a>
+                        <a href="./page-book.html" class="page-navigation__item title-h3">Книги</a>
+                        <a href="./page-consulting.html" class="page-navigation__item title-h3">Консалтинг</a>
+                        <a href="./page-download-magazin.html" class="page-navigation__item title-h3">Страница
+                            скачивания журнала</a>
+                    </div>
+                </div>
+
+
+                <div class="page-navigation__column">
+                    <div class="page-navigation__title title-h2">Попапы</div>
+                    <div class="page-navigation__list">
+                        <a href="#popup-cons" class="page-navigation__item title-h3 js-show-popup">Заказать
+                            консультацию</a>
+
+                        <a href="#popup-write-us" class="page-navigation__item title-h3 js-show-popup">написать нам</a>
+
+                        <a href="#popup-order-call" class="page-navigation__item title-h3 js-show-popup">Заказать
+                            звонок</a>
+
+                        <a href="#popup-manager" class="page-navigation__item title-h3 js-show-popup">Связьс
+                            менеджером</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<style>
+    .page-navigation {
+        padding: 100px 0;
+        background: #19232F;
+        height: 100vh;
+    }
+
+    .page-navigation__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .page-navigation__title {
+        margin-bottom: 40px;
+    }
+
+    .page-navigation__list {
+        display: grid;
+        grid-gap: 40px;
+    }
+</style>
+
+@@include("../components/_footer.html")
